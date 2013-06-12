@@ -1,0 +1,41 @@
+<div class="modal-header">
+      <button class="close" data-dismiss="modal" onclick="clearPass();">×</button>
+      <h3>修改个人密码</h3>
+   </div>
+   <div class="modal-body">
+      <form class="form-horizontal" id="resetPasswordForm" name="resetPasswordForm" onsubmit="return false;" novalidate="novalidate">
+	    <fieldset>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>旧密码</label>
+	        <div class="controls">
+           	  <input class="span6" type="password" id="oldPassword" name="oldPassword" maxlength="16">
+           	</div>
+           	<div class="controls">
+	          <p class="help-block">用户当前的登录密码，由6-16个字母、数字或下划线组成</p>
+	        </div>
+	      </div>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>新密码</label>
+	        <div class="controls">
+              <input class="span6" type="password" id="newPassword" name="newPassword" maxlength="16" "="">
+            </div>
+            <div class="controls">
+	          <p class="help-block">用户新的登录密码，由6-16个字母、数字或下划线组成</p>
+	        </div>
+	      </div>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>确认密码</label>
+	        <div class="controls">
+	          <input class="span6" type="password" id="affirmPassword" name="affirmPassword" maxlength="16">
+	        </div>
+	        <div class="controls">
+	          <p class="help-block">确认密码必须和新密码一致</p>
+	        </div>
+	      </div>
+	    </fieldset>
+	  </form>
+   </div>
+   <div class="modal-footer">
+      <a href="javascript:void(0)" onclick="submitResetPassword();" class="btn btn-large">确认</a>
+      <a data-dismiss="modal" class="btn btn-large" onclick="clearPass();">取消</a>
+   </div>

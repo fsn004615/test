@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><head>
+<meta charset="utf-8">
+<title>工作台 | 仓储条码管理信息系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../libraries/bootstrap/2.3.1/css/bootstrap.css">
+<link rel="stylesheet" href="../../libraries/bootstrap/2.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../libraries/bootstrap/2.3.1/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="../../libraries/bootstrap/2.3.1/css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="../../stylesheets/css/dtree.css">
+<link rel="stylesheet" href="../../stylesheets/css/jquery-ui-1.10.2.custom.css">
+<link rel="stylesheet" href="../../stylesheets/css/jquery-ui.css">
+<link rel="stylesheet" href="../../stylesheets/css/application-0.1.0.css">
+</head>
+<body>
+<div class="container-fluid">
+  <div id="header" class="row-fluid">
+    <h1 id="logo" class="span2"></h1>
+    <ul id="navbar" class="span7">
+         <li><a href="../warehouse/input/arrival-notice.html" list="list_0">仓库管理</a></li>
+         <li class="active"><a href="spectrum-detection.html" list="list_1">增值业务</a></li>
+         <li><a href="../basic_config/basis_data/material_manage.html" list="list_2">基础配置</a></li>
+         <li><a href="../system-security/management-of-user.html" list="list_3">系统安全</a></li>
+    </ul>
+    <div id="profile" class="span3">
+      <i class="icon-user"></i>&nbsp;<a data-toggle="modal" data-target="#myModal" href="javascript:void(0);">系统管理员</a>&nbsp;|&nbsp;<a href="../others/workbench.html">我的工作台</a>&nbsp;|&nbsp;<a href="../others/the_system_message.html">系统消息</a>&nbsp;|&nbsp;<a href="../../index.html">注销</a>
+    </div>
+  </div>  
+  <div id="content" class="row-fluid">
+    
+  <div class="span2">
+      <ul class="second_list" id="list_2" style="display: block; min-height: 653px;">
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-0">光谱检测</a>
+         </h3>
+         <ul id="collapse-10-0" class="collapse in menu-item-opened">
+      <li class="active">
+            <a href="spectrum-detection.html" onclick="submitMenu('/market/sale/listoutinvoice'); return false;">光谱检测记录</a>
+      </li>
+         </ul>
+      </li>
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-1">监理审计</a>
+         </h3>
+         <ul id="collapse-10-1" class="collapse in menu-item-opened">
+      <li>
+            <a href="supervision-audit.html" onclick="submitMenu('/market/org/listorg/query'); return false;">监理审计申请</a>
+      </li>
+         </ul>
+      </li>
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-2">防腐处理</a>
+         </h3>
+         <ul id="collapse-10-2" class="collapse in menu-item-opened">
+      <li>
+            <a href="anticorrosive.html" onclick="submitMenu('/market/card/listcard'); return false;">防腐记录</a>
+      </li>
+         </ul>
+      </li>
+	  <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-4">追溯管理</a>
+         </h3>
+         <ul id="collapse-10-4" class="collapse in menu-item-opened">
+      <li>
+            <a href="traceability-management.html">物料追溯记录</a>
+      </li>
+         </ul>
+      </li>
+   </ul>
+  </div>
+ <div id="workspace" class="span10">   
+  <style>
+#qForm span.help-inline{
+    display: inline-block;
+    padding-left: 5px;
+    vertical-align: middle;
+    color:#B94A48;
+}
+</style>
+    <h1>修改光谱/硬度检测记录明细</h1>
+    <form class="form-horizontal" id="dForm" name="dForm" action="basicdata/material/belongs" method="POST" novalidate="novalidate"> 
+	<fieldset>
+	 <div class="items">
+	  <input type="hidden" id="type" name="type" value="create">
+      <div class="control-group">
+         <label class="control-label" for="productName"><em class="required">*</em>货主</label>
+         <div class="controls">
+           <select id="warehouseId" name="warehouseId" class="span6" style=";">
+		      <option value="1">甲供料</option>
+		      <option value="2">乙供料</option> 
+		   </select>
+         </div>
+    </div>
+	  <div class="control-group">
+         <label class="control-label" for="productName"><em class="required">*</em>合同号</label>
+         <div class="controls">
+           <input type="text" id="productId" name="productId" class="span6" maxlength="11" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" value="" placeholder="例如：SA-212458"> 
+         </div>
+      </div>
+	  <div class="control-group">
+         <label class="control-label" for="productName"><em class="required">*</em>物料编码</label>
+         <div class="controls">
+           <input type="text" id="productId" name="productId" class="span6" maxlength="11" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" value="" placeholder="点击右侧按钮，选择物料编码">
+         </div>
+      </div>
+	  <div class="control-group">
+         <label class="control-label" for="productName"><em class="required">*</em>规格型号</label>
+         <div class="controls">
+           <input type="text" id="productId" name="productId" class="span6" maxlength="11" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" value="" placeholder="由物料编码导出">
+         </div>
+      </div>
+	  <div class="control-group">
+         <label class="control-label" for="productName"><em class="required">*</em>材质</label>
+         <div class="controls">
+           <input type="text" id="productId" name="productId" class="span6" maxlength="11" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" placeholder="由物料编码导出">
+         </div>
+      </div>
+	  <div class="control-group">
+         <label class="control-label" for="productName"><em class="required">*</em>计量单位</label>
+         <div class="controls">
+           <input id="customerId" class="span6" name="customerId" type="text" value="" readonly="readonly" placeholder="">
+         </div>
+      </div>
+	  <div class="control-group">
+         <label class="control-label" for="productName"><em class="required">*</em>数量</label>
+         <div class="controls">
+           <input type="text" id="productId" name="productId" class="span6" maxlength="11" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+         </div>
+      </div>
+	  <div class="control-group">
+         <label class="control-label" for="productName"><em class="required">*</em>抽检比例</label>
+         <div class="input-append">
+		   <input type="text" id="productId" name="productId" class="span12 ui-autocomplete-input" placeholder="例如：5%" maxlength="11" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" style=" margin-left: 31px; width:177%; "><span class="add-on">%</span>
+         </div>		 
+	  </div>
+      <div class="control-group">
+         <label class="control-label" for="productName"><em class="required">*</em>抽检数量</label>
+         <div class="controls">
+           <input type="text" id="productId" name="productId" class="span6" maxlength="11" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+         </div>
+      </div>
+	  <div class="control-group">
+         <label class="control-label" for="productName"><em class="required">*</em>参考标准</label>
+         <div class="controls">
+           <input class="span6" type="text" id="number" name="number" maxlength="16" placeholder="">
+         </div>
+      </div>
+	  <div class="control-group">
+         <label class="control-label" for="productName"><em class="required">*</em>供应商</label>
+         <div class="controls">
+           <input type="text" id="productId" name="productId" class="span6" maxlength="11" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" placeholder="点击右侧按钮，选择供货商名称">
+         </div>
+      </div>
+	  <div class="control-group">
+         <label class="control-label" for="productName"><em class="required">*</em>生产商</label>
+         <div class="controls">
+           <input type="text" id="productId" name="productId" class="span6" maxlength="11" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+         </div>
+      </div>
+	  <div class="control-group">
+         <label class="control-label" for="productName"><em class="required">*</em>炉批号</label>
+         <div class="controls">
+           <input type="text" id="productId" name="productId" class="span6" maxlength="11" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" placeholder="例如：P-12434175">
+         </div>
+      </div>
+	  <div class="control-group">
+         <label class="control-label" for="productName"><em class="required">*</em>拟用部位</label>
+         <div class="controls">
+           <input type="text" id="productId" name="productId" class="span6" maxlength="11" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" placeholder="例如：脱硫设备">
+         </div>
+      </div>
+	  <div class="control-group">
+         <label class="control-label" for="productName"><em class="required">*</em>检测结果</label>
+         <div class="controls">
+           <select id="status" name="status" class="span6">
+		      <option value="">-- 所有结果 --</option>
+		          <option value="1">合格</option> 
+		          <option value="2">不合格</option> 
+		   </select>
+         </div>
+      </div>
+	  <div class="control-group">
+         <label class="control-label" for="productName">备注</label>
+         <div class="controls">
+           <input type="text" id="productId" name="productId" class="span6" maxlength="11" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+         </div>
+      </div>
+      <div class="control-group">
+         <div class="controls">
+           <a href="spectral-details.html" class="btn btn-large">确定</a>
+           <a href="spectral-details.html" class="btn btn-large">返回</a>
+         </div>
+      </div>
+	 </div> 
+    </fieldset>
+   </form>          
+  </div>
+ </div> 
+
+
+  </div>
+  </div>
+    
+    <p class="row-fluid" id="footer">
+    <a href="../others/to_do.html">帮助中心</a>&nbsp;|&nbsp;
+    <a href="../others/to_do.html" >更新日记</a>&nbsp;|&nbsp;
+    <a href="../others/to_do.html">意见反馈</a><br>
+当前版本：v1.0.0<br>  </p>
+
+
+<div class="modal" id="myModal" style="display:none;">
+   <div class="modal-header">
+      <button class="close" data-dismiss="modal" onclick="clearPass();">×</button>
+      <h3>修改个人密码</h3>
+   </div>
+   <div class="modal-body">
+      <form class="form-horizontal" id="resetPasswordForm" name="resetPasswordForm" onsubmit="return false;" novalidate="novalidate">
+	    <fieldset>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>旧密码</label>
+	        <div class="controls">
+           	  <input class="span5" type="password" id="oldPassword" name="oldPassword" maxlength="16">
+           	</div>
+           	<div class="controls">
+	          <p class="help-block">用户当前的登录密码，由6-16个字母、数字或下划线组成</p>
+	        </div>
+	      </div>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>新密码</label>
+	        <div class="controls">
+              <input class="span5" type="password" id="newPassword" name="newPassword" maxlength="16" "="">
+            </div>
+            <div class="controls">
+	          <p class="help-block">用户新的登录密码，由6-16个字母、数字或下划线组成</p>
+	        </div>
+	      </div>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>确认密码</label>
+	        <div class="controls">
+	          <input class="span5" type="password" id="affirmPassword" name="affirmPassword" maxlength="16">
+	        </div>
+	        <div class="controls">
+	          <p class="help-block">确认密码必须和新密码一致</p>
+	        </div>
+	      </div>
+	    </fieldset>
+	  </form>
+   </div>
+   <div class="modal-footer">
+      <a href="javascript:void(0)" onclick="submitResetPassword();" class="btn btn-large">确认</a>
+      <a data-dismiss="modal" class="btn btn-large" onclick="clearPass();">取消</a>
+   </div>
+</div>
+
+
+
+ 
+
+
+ 
+<script src="../../libraries/jquery/1.9.1/jquery-1.9.1.js"></script>
+<script src="../../libraries/jquery/1.9.1/jquery-ui-1.10.2.custom.min.js"></script>
+<script src="../../libraries/bootstrap/2.3.1/js/bootstrap.js"></script>  
+<script src="../../libraries/jquery.validation/1.11.0/jquery.validate.js"></script> 
+<script src="../../libraries/jquery.validation/1.11.0/additional-methods.js"></script>
+<script src="../../libraries/jquery.validation/1.11.0/messages_zh.js"></script>
+<script src="../../javascripts/ui/jquery-ui.js"></script>
+<script src="../../javascripts/jquery.ui.datepicker-zh-CN.js"></script>
+<script src="../../javascripts/custom/utils.js"></script>
+
+
+
+</body>
+</html>

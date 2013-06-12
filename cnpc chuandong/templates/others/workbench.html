@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>工作台 | 仓储条码管理信息系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="../../libraries/bootstrap/2.3.1/css/bootstrap.css">
+<link rel="stylesheet" href="../../libraries/bootstrap/2.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../libraries/bootstrap/2.3.1/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="../../libraries/bootstrap/2.3.1/css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="../../stylesheets/css/dtree.css">
+<link rel="stylesheet" href="../../stylesheets/css/jquery-ui-1.10.2.custom.css">
+<link rel="stylesheet" href="../../stylesheets/css/jquery-ui.css">
+<link rel="stylesheet" href="../../stylesheets/css/application-0.1.0.css">
+</head>
+<body>
+<div class="container-fluid">
+   <div id="header" class="row-fluid">
+    <h1 id="logo" class="span2"></h1>
+    <ul id="navbar" class="span7">
+         <li class="active"><a href="../warehouse/input/arrival-notice.html" list="list_0">仓库管理</a></li>
+         <li><a href="../valueadded-services/spectrum-detection.html" list="list_1">增值业务</a></li>
+         <li><a href="../basic_config/basis_data/material_manage.html" list="list_2">基础配置</a></li>
+         <li><a href="../system-security/management-of-user.html" list="list_3">系统安全</a></li>
+    </ul>
+    <div id="profile" class="span3">
+      <i class="icon-user"></i>&nbsp;<a data-toggle="modal" data-target="#myModal" href="javascript:void(0);">系统管理员</a>&nbsp;|&nbsp;<a href="workbench.html">我的工作台</a>&nbsp;|&nbsp;<a href="the_system_message.html">系统消息</a>&nbsp;|&nbsp;<a href="../../index.html">注销</a>
+    </div>
+   </div>
+   <div id="content" class="row-fluid">    
+   <div class="span2">
+      <ul class="second_list" id="list_2" style="display: block; min-height: 719px;">
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-0">入库业务</a>
+         </h3>
+         <ul id="collapse-10-0" class="collapse in menu-item-opened">
+      <li>
+            <a href="../warehouse/input/arrival-notice.html">到货预告</a>
+      </li>
+      <li>
+            <a href="../warehouse/input/warehouse-input.html">采购入库</a>
+      </li>
+	  <li>
+            <a href="../warehouse/input/withdrawing-application.html">退料入库</a>
+      </li>
+      <li>
+            <a href="../warehouse/input/mrr-report.html">MRR报告</a>
+      </li>
+         </ul>
+      </li>
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-1">出库业务</a>
+         </h3>
+         <ul id="collapse-10-1" class="collapse in menu-item-opened">
+      <li>
+            <a href="../warehouse/output/an-application-form.html">领料申请</a>
+      </li>
+      <li>
+            <a href="../warehouse/output/warehouse-output.html">领料出库</a>
+      </li>
+         </ul>
+      </li>
+	  <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-2">UOSD</a>
+         </h3>
+         <ul id="collapse-10-2" class="collapse in menu-item-opened">
+      <li>
+            <a href="templates/warehouse/uosd/uosd-report.html">UOSD报告</a>
+      </li>
+         </ul>
+      </li>
+	  
+	  <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-3">库存盘点</a>
+         </h3>
+         <ul id="collapse-10-3" class="collapse in menu-item-opened">
+      <li>
+            <a href="../warehouse/inventory-verification/take-stock.html">盘点任务</a>
+      </li>
+	  <li>
+            <a href="../warehouse/inventory-verification/take-stock-report.html">盘点报告</a>
+      </li>
+         </ul>
+      </li>
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-4">库位管理</a>
+         </h3>
+         <ul id="collapse-10-4" class="collapse in menu-item-opened">
+	  <li>
+            <a href="../warehouse/space-management-in-warehouse/storage-location-planning.html">库位规划</a>
+      </li>
+	  <li>
+            <a href="../warehouse/space-management-in-warehouse/location-adjustment.html">物料移库</a>
+      </li>
+	  <li>
+            <a href="../warehouse/space-management-in-warehouse/storage-location-statistics.html">库位统计</a>
+      </li>
+         </ul>
+      </li>
+	  <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-4">库存分析</a>
+         </h3>
+         <ul id="collapse-10-4" class="collapse in menu-item-opened">	  
+      <li>
+            <a href="../warehouse/reserve-analysis/stock-statistics.html">实时库存统计</a>
+      </li>
+	  <li>
+            <a href="../warehouse/reserve-analysis/income-issue-save.html">收发存汇总表</a>
+      </li>
+         </ul>
+      </li>
+   </ul>
+  </div>
+  <div id="workspace" class="span10">   
+   <div class="row-fluid">
+   <div class="span8">
+    <h3 class="welcome"><script type="text/javascript">
+today=new Date();
+var day; var date; var hello;
+hour=new Date().getHours()
+if(hour < 6)hello='  凌晨好! '
+else if(hour < 9)hello=' 早上好! '
+else if(hour < 12)hello=' 上午好! '
+else if(hour < 14)hello=' 中午好! '
+else if(hour < 17)hello=' 下午好! '
+else if(hour < 19)hello=' 傍晚好! '
+else if(hour < 22)hello=' 晚上好! '
+else {hello='夜深了! '}
+var webUrl = webUrl;
+document.write(' '+hello);
+</script>，系统管理员。</h3>
+     <p>
+       现在的时间是：<font size="2">
+	                   <script language="JavaScript" type="text/JavaScript">
+                        var day="";
+                        var month="";
+                        var ampm="";
+                        var ampmhour="";
+                        var myweekday="";
+                        var year="";
+                        mydate=new Date();
+                        myweekday=mydate.getDay();
+                        mymonth=mydate.getMonth()+1;
+                        myday= mydate.getDate();
+                        myyear= mydate.getYear();
+                        year=(myyear > 200) ? myyear : 1900 + myyear;
+                        document.write(year+"年"+mymonth+"月"+myday+"日 ");
+                       </script>
+					  </font>
+					  <script language=javascript>
+                       function CurentTime(){  
+                        var now = new Date();  
+                        var hh = now.getHours();  
+                        var mm = now.getMinutes();  
+                        var ss = now.getTime() % 60000;  
+                        ss = (ss - (ss % 1000)) / 1000;  
+                       var clock = hh+':';   if (mm < 10) clock += '0';   clock += mm+':';    if (ss < 10) clock += '0';   clock += ss;  return(clock);  
+                       }  
+                        document.write('<font id="calendarClock4" style="color:#000000;font-family:Arial;font-size:8pt;Line-Height=100%"></font>'); 
+                        function refreshCalendarClock(){  document.getElementById("calendarClock4").innerHTML = CurentTime();  } 
+                        setInterval('refreshCalendarClock()',1000);
+                       </script>
+   
+     </p>
+    <ul id="function-list">
+     <li><a href="to_do.html"><img src="../../images/workbench/user.png"/>&nbsp;&nbsp;&nbsp;用户管理</a></li>
+     <li><a href="../warehouse/input/arrival-notice.html"><img src="../../images/workbench/list.png"/>&nbsp;&nbsp;&nbsp;送货通知</a></li>
+	 <li><a href="../warehouse/output/warehouse-output.html"><img src="../../images/workbench/addition.png"/>&nbsp;&nbsp;领料出库</a></li>
+	 <li><a href="../warehouse/inventory-verification/take-stock.html"><img src="../../images/workbench/limit.png"/>&nbsp;&nbsp;库存盘点</a></li>
+     <li><a href="../warehouse/space-management-in-warehouse/storage-location-planning.html"><img src="../../images/workbench/tempsave.png"/>&nbsp;&nbsp;库位规划</a></li>
+     <li><a href="../warehouse/reserve-analysis/stock-statistics.html"><img src="../../images/workbench/statistics.png"/>&nbsp;&nbsp;库存统计</a></li> 
+    </ul>
+   </div>
+   <div class="span4">
+       <div class="item-group">
+        <h4>出库单</h4>
+        <a href="../warehouse/output/an-application-form.html"><span class="number">0</span>&nbsp;领料申请</a><br />
+        <a href="../warehouse/output/warehouse-output.html"><span class="number">0</span>&nbsp;领料出库</a><br />
+       </div>
+       <div class="item-group">
+        <h4>入库单</h4>
+        <a href="../warehouse/input/warehouse-input.html"><span class="number">0</span>&nbsp;采购入库单</a><br />
+        <a href="../warehouse/input/withdrawing-application.html"><span class="number">0</span>&nbsp;退料入库单</a><br />
+       </div>            
+      <div class="item-group">
+         <h4>系统消息</h4>
+         <a href="to_do.html"><span class="number">0</span>&nbsp;个未处理系统消息</a><br /> 
+      </div>
+     </div>
+   </div>
+    
+    
+ </div> 
+  </div> 
+<style>
+
+h3.welcome {
+font-size: 20px;
+font-weight: bold;
+line-height: 27px;
+padding: 10px 0;
+}
+
+#function-list {
+list-style: none;
+margin: 35px 0;
+}
+#function-list li {
+float: left;
+}
+#function-list li a {
+border: 1px solid #eee;
+border-radius: 5px;
+box-shadow: 1px 1px 3px #ddd;
+color: #666;
+display: block;
+font-size: 15px;
+height: 25px;
+line-height: 25px;
+margin: 0 0 20px 0;
+padding: 20px 30px;
+text-align: center;
+transition: all 0.3s ease;
+width: 125px;
+-moz-border-radius: 5px;
+-moz-box-shadow: 1px 1px 3px #ddd;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+-webkit-border-radius: 5px;
+-webkit-box-shadow: 1px 1px 3px #ddd;
+-webkit-transition: all 0.3s ease;
+}
+#function-list li a:hover {
+border: 1px solid #aaa;
+box-shadow: 1px 1px 6px #bbb;
+-moz-box-shadow: 1px 1px 6px #bbb;
+-webkit-box-shadow: 1px 1px 6px #bbb;
+}
+#function-list li {
+width:33%;
+}
+.item-group {
+line-height: 200%;
+overflow: hidden;
+padding-bottom: 20px;
+text-align: center;
+}
+.item-group:first-child {
+margin-top: 47px;
+}
+.item-group h4 {
+background: url("../../images/line3.png") no-repeat center center;
+margin-bottom: 10px;
+}
+
+span.number {
+font-size: 18px;
+font-weight: bold;
+}
+</style>
+
+</div>
+
+<p class="row-fluid" id="footer">	 
+<a href="to_do.html" >帮助中心</a>&nbsp;|&nbsp;
+    <a href="to_do.html" >更新日记</a>&nbsp;|&nbsp;
+    <a href="to_do.html" >意见反馈</a><br>
+当前版本：v1.0.0<br>
+</p>
+
+<div class="modal" id="myModal" style="display:none;">
+   <div class="modal-header">
+      <button class="close" data-dismiss="modal" onclick="clearPass();">×</button>
+      <h3>修改个人密码</h3>
+   </div>
+   <div class="modal-body">
+      <form class="form-horizontal" id="resetPasswordForm" name="resetPasswordForm" onsubmit="return false;" novalidate="novalidate">
+	    <fieldset>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>旧密码</label>
+	        <div class="controls">
+           	  <input class="span6" type="password" id="oldPassword" name="oldPassword" maxlength="16">
+           	</div>
+           	<div class="controls">
+	          <p class="help-block">用户当前的登录密码，由6-16个字母、数字或下划线组成</p>
+	        </div>
+	      </div>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>新密码</label>
+	        <div class="controls">
+              <input class="span6" type="password" id="newPassword" name="newPassword" maxlength="16" "="">
+            </div>
+            <div class="controls">
+	          <p class="help-block">用户新的登录密码，由6-16个字母、数字或下划线组成</p>
+	        </div>
+	      </div>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>确认密码</label>
+	        <div class="controls">
+	          <input class="span6" type="password" id="affirmPassword" name="affirmPassword" maxlength="16">
+	        </div>
+	        <div class="controls">
+	          <p class="help-block">确认密码必须和新密码一致</p>
+	        </div>
+	      </div>
+	    </fieldset>
+	  </form>
+   </div>
+   <div class="modal-footer">
+      <a href="javascript:void(0)" onclick="submitResetPassword();" class="btn btn-large">确认</a>
+      <a data-dismiss="modal" class="btn btn-large" onclick="clearPass();">取消</a>
+   </div>
+</div>
+<div class="modal hide fade" id="product-modal">
+    <div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    	<h3>物料选择</h3>
+    </div>
+    <div class="modal-body">
+    	<iframe frameborder="0" id="product-frame" name="product-frame"></iframe>
+    </div>
+    <div class="modal-footer">
+    </div>
+</div>
+<div class="modal hide fade" id="location-modal">
+    <div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    	<h3>库位选择</h3>
+    </div>
+    <div class="modal-body">
+    	<iframe frameborder="0" id="location-frame" name="location-frame"></iframe>
+    </div>
+    <div class="modal-footer">
+    </div>
+</div>
+
+<script src="../../libraries/jquery/1.9.1/jquery-1.9.1.js"></script>
+<script src="../../libraries/jquery/1.9.1/jquery-ui-1.10.2.custom.min.js"></script>
+<script src="../../libraries/bootstrap/2.3.1/js/bootstrap.js"></script>  
+<script src="../../libraries/jquery.validation/1.11.0/jquery.validate.js"></script> 
+<script src="../../libraries/jquery.validation/1.11.0/additional-methods.js"></script>
+<script src="../../libraries/jquery.validation/1.11.0/messages_zh.js"></script>
+<script src="../../javascripts/ui/jquery-ui.js"></script>
+<script src="../../javascripts/jquery.ui.datepicker-zh-CN.js"></script>
+<script src="../../javascripts/custom/utils.js"></script>
+
+<script language="javascript" type="text/javascript">
+   $(document).ready(function(){
+        
+        
+});
+</script>
+
+</body>
+</html>

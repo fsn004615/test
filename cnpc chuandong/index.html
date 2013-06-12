@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 页面标题 -->
+<title>首页 | 仓库条码管理系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 应用程序图标 -->
+<link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-57-precomposed.png" />
+<!-- 外部组件样式 -->
+<link rel="stylesheet" href="libraries/bootstrap/2.3.1/css/bootstrap.min.css" />
+<!-- 前端框架样式 -->
+<link rel="stylesheet" href="libraries/tangram/0.1.0/stylesheets/tangram.css" />
+<!-- 项目公用样式 -->
+<link rel="stylesheet" href="stylesheets/application-0.1.0.css" />
+<!-- 本页专用样式 -->
+<style>
+#logo {
+background: url("images/logo-and-name.png") no-repeat 0 0;
+height: 40px;
+}
+#content {
+background-image: none;
+padding: 30px 0;
+}
+#content-flash {
+text-align: center;
+}
+legend {
+border: 0;
+width: 74.1935483871%;
+}
+.form-horizontal .control-label {
+width: 22.58064516129%;
+}
+.form-horizontal .controls,
+.alert {
+margin-left: 25.8064516129%;
+}
+</style>
+</head>
+<body>
+<div class="container-fluid">
+  <!-- 页头 -->
+  <div id="header" class="row-fluid">
+    <h1 id="logo"></h1>
+  </div>
+  <!-- 内容区 -->
+  <div id="content" class="row-fluid">
+    <!-- 登录表单题图 -->
+    <div id="content-flash" class="span4">
+      <img src="images/login.jpg" />
+    </div>
+    <!-- 登录表单 -->
+    <form id="formLogin" name="formLogin" class="span8 form-horizontal" method="post" action="templates/others/workbench.html">
+      <fieldset>
+        <!-- 表单标题 -->
+        <div class="control-group">
+          <div class="controls">
+            <legend>仓库条码管理系统</legend>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="userName"><em class="required">*</em>账号</label>
+          <div class="controls">
+            <input id="userName" name="userName" class="span3" type="text" maxlength="16" placeholder="例如：张三" />
+            <span><p class="help-block" id="userName-info">用户名由字母，数字，下划线组成</p></span>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="password"><em class="required">*</em>密码</label>
+          <div class="controls">
+            <input id="password" name="password" class="span3" type="password" maxlength="16" />
+            <span><p class="help-block" id="password-info">长度必须在6到16个字符之间</p></span>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+            <input class="btn-primary btn-large" type="submit" value="登录" />
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <!-- 页脚 -->
+  <p class="row-fluid" id="footer">
+    当前版本：v1.0.0
+  </p>
+</div>
+<!-- 外部组件JavaScript脚本 -->
+<script src="libraries/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script src="libraries/jquery.validation/1.11.0/jquery.validate.min.js"></script>
+<script src="libraries/jquery.validation/1.11.0/additional-methods.min.js"></script>
+<script src="libraries/jquery.validation/1.11.0/messages_zh.js"></script>
+<script src="libraries/jquery.validation.bootstrap_adapter/0.1.0/jquery.validate.bootstrap_adapter-0.1.0.js"></script>
+<script src="libraries/bootstrap/2.3.1/js/bootstrap.min.js"></script>
+<!-- 前端框架JavaScript脚本 -->
+<script src="libraries/tangram/0.1.0/javascripts/tangram.js"></script>
+<!-- TODO:项目公用JavaScript脚本 -->
+<!-- <script src="javascripts/application-0.1.0.js"></script> -->
+<!-- 本页专用JavaScript脚本 -->
+<script type="text/javascript">
+function initialize(){
+	jQuery.validator.addMethod("stringCheck", function(value, element) {
+	return this.optional(element) || /^[\u0391-\uFFE5\w]+$/.test(value);
+	}, "只能包括中文字、英文字母、数字和下划线");
+
+	// validate parameter
+	$('#formLogin').validate({
+	  event : "blur",
+
+      rules : {
+       userName:
+       {
+         required: true,
+         rangelength:[1,16],
+		 stringCheck:true
+       },
+	   password:
+	   {
+         required: true,
+         rangelength:[6,16],
+       }
+    },
+	messages: {
+		userName:"用户名不能为空,且只能为字母，数字，下划线",
+		password:"密码不能为空,长度为6-16个字符"
+	},
+	errorPlacement: function(error, element) {
+		error.insertAfter(element); //默认位置，可灵活改动
+		if (element.attr("id") == "userName"){
+			$('#userName-info').hide();
+		} else {
+			$('#password-info').hide();
+		}
+
+	},
+
+
+  });
+}
+
+function initializeInputFocus(){
+	$("#userName").focus();
+}
+
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	initializeInputFocus();
+
+	if ('function' === typeof(initialize)){
+		initialize();
+	}
+
+
+});
+</script>
+
+<script>
+<!-- 页面逻辑入口 -->
+function main(){
+}
+</script>
+</body>
+</html>

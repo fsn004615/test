@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><head>
+<meta charset="utf-8">
+<title>工作台 | 仓储条码管理信息系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="stylesheet" href="../../../libraries/datatable.tabletools/css/TableTools.css">
+<link rel="stylesheet" href="../../../libraries/bootstrap/2.3.1/css/bootstrap.css">
+<link rel="stylesheet" href="../../../libraries/bootstrap/2.3.1/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="../../../libraries/bootstrap/2.3.1/css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="../../../libraries/datatable.bootstrap.adapter/dataTables.bootstrap.css">
+<link rel="stylesheet" href="../../../stylesheets/css/dtree.css">
+<link rel="stylesheet" href="../../../stylesheets/css/jquery-ui-1.10.2.custom.css">
+<link rel="stylesheet" href="../../../stylesheets/css/jquery-ui.css">
+<link rel="stylesheet" href="../../../stylesheets/css/application-0.1.0.css">
+</head>
+<body>
+<div class="container-fluid">
+  <div id="header" class="row-fluid">
+    <h1 id="logo" class="span2"></h1>
+    <ul id="navbar" class="span7">
+         <li><a href="../../warehouse/input/arrival-notice.html" list="list_0">仓库管理</a></li>
+         <li><a href="../../valueadded-services/spectrum-detection.html" list="list_1">增值业务</a></li>
+         <li class="active"><a href="material_manage.html" list="list_2">基础配置</a></li>
+         <li><a href="../../system-security/management-of-user.html" list="list_3">系统安全</a></li>
+    </ul>
+    <div id="profile" class="span3">
+      <i class="icon-user"></i>&nbsp;<a data-toggle="modal" data-target="#myModal" href="javascript:void(0);">系统管理员</a>&nbsp;|&nbsp;<a href="../../others/workbench.html">我的工作台</a>&nbsp;|&nbsp;<a href="../../others/the_system_message.html">系统消息</a>&nbsp;|&nbsp;<a href="../../../index.html">注销</a>
+    </div>
+  </div>  
+  <div id="content" class="row-fluid">    
+  
+  <div class="span2">
+      <ul class="second_list" id="list_2" style="display: block; min-height: 719px;">
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-0">基础资料</a>
+         </h3>
+         <ul id="collapse-10-0" class="collapse in menu-item-opened">
+      <li>
+            <a href="material_manage.html">物料管理</a>
+      </li>
+      <li>
+            <a href="supplies_manage.html">供应商管理</a>
+      </li>
+	  <li>
+            <a href="receiving_materials_manage.html">领料方管理</a>
+      </li>
+	  <li>
+            <a href="unit_manage.html">计量单位管理</a>
+      </li>
+	  <li class="active">
+            <a href="purchasing_model.html">采购方式管理</a>
+      </li>
+         </ul>
+      </li>
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-1">系统配置</a>
+         </h3>
+         <ul id="collapse-10-1" class="collapse in menu-item-opened">
+  
+         </ul>
+      </li>
+   </ul>
+  </div>
+  <div id="workspace" class="span10">   
+   <h1>查询采购方式</h1>
+    <form class="vertical-inline-form" id="qForm" name="qForm" action="basicdata/material/listprintlabel/market" method="GET">
+	<fieldset>	
+       <div class="control-group" >
+      <label class="control-label" for="departmentId"><em class="required">*</em>采购方式</label>
+      <div class="controls">
+        <input id="customerId" class="span10" name="customerId" type="text" value="" readonly="readonly" placeholder="">
+		<a class="btn product-catagory-query" selector="#productId" selectproduct="false" framesrc="basicdata/material/getproductbyid?selector=%23productId&amp;selectProduct=false" style="margin-left:-33px;">...</a>
+      </div>
+    </div>
+       <div class="control-group btn-panel">
+           <label>&nbsp;</label>
+           <div class="controls">
+              <a class="btn" href="#">查询</a>
+           </div>
+       </div>
+	</fieldset>
+   </form>
+ <hr></hr>   
+    <div class="items">
+      <table class="table table-striped table-bordered dataTable" id="info_table">
+        <thead>
+          <tr>
+            <th><input id="selectAll" name="selectAll" type="checkbox" onclick="check_all(this,'id')"></th>
+            <th>计量单位</th>            
+			<th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center;"><input id="selectAll" name="selectAll" type="checkbox" ></td>
+            <td></td>            
+			<td style="text-align: center">
+              <a href="purchasing_model_add.html">修改</a>	
+			</td>			  
+          </tr>                        
+        </tbody>
+      </table>    
+    </div>  
+ </div> 
+  </div>
+  </div>
+    
+    <p class="row-fluid" id="footer">
+    <a href="../../others/to_do.html" >帮助中心</a>&nbsp;|&nbsp;
+    <a href="../../others/to_do.html" >更新日记</a>&nbsp;|&nbsp;
+    <a href="../../others/to_do.html" >意见反馈</a><br>
+当前版本：v1.0.0<br>  </p>
+
+
+<div class="modal" id="myModal" style="display:none;">
+   <div class="modal-header">
+      <button class="close" data-dismiss="modal" onclick="clearPass();">×</button>
+      <h3>修改个人密码</h3>
+   </div>
+   <div class="modal-body">
+      <form class="form-horizontal" id="resetPasswordForm" name="resetPasswordForm" onsubmit="return false;" novalidate="novalidate">
+	    <fieldset>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>旧密码</label>
+	        <div class="controls">
+           	  <input class="span6" type="password" id="oldPassword" name="oldPassword" maxlength="16">
+           	</div>
+           	<div class="controls">
+	          <p class="help-block">用户当前的登录密码，由6-16个字母、数字或下划线组成</p>
+	        </div>
+	      </div>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>新密码</label>
+	        <div class="controls">
+              <input class="span6" type="password" id="newPassword" name="newPassword" maxlength="16" "="">
+            </div>
+            <div class="controls">
+	          <p class="help-block">用户新的登录密码，由6-16个字母、数字或下划线组成</p>
+	        </div>
+	      </div>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>确认密码</label>
+	        <div class="controls">
+	          <input class="span6" type="password" id="affirmPassword" name="affirmPassword" maxlength="16">
+	        </div>
+	        <div class="controls">
+	          <p class="help-block">确认密码必须和新密码一致</p>
+	        </div>
+	      </div>
+	    </fieldset>
+	  </form>
+   </div>
+   <div class="modal-footer">
+      <a href="javascript:void(0)" onclick="submitResetPassword();" class="btn btn-large">确认</a>
+      <a data-dismiss="modal" class="btn btn-large" onclick="clearPass();">取消</a>
+   </div>
+</div>
+
+
+
+ 
+
+<script src="../../../libraries/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script src="../../../libraries/jquery/1.9.1/jquery-ui-1.10.2.custom.min.js"></script>
+<script src="../../../libraries/bootstrap/2.3.1/js/bootstrap.min.js"></script>  
+<script src="../../../libraries/jquery.validation/1.11.0/jquery.validate.js"></script> 
+<script src="../../../libraries/jquery.validation/1.11.0/additional-methods.js"></script>
+<script src="../../../libraries/jquery.validation/1.11.0/messages_zh.js"></script>
+<script src="../../../javascripts/ui/jquery-ui.js"></script>
+<script src="../../../javascripts/jquery.ui.datepicker-zh-CN.js"></script>
+<script src="../../../libraries/datatable/1.9.4/js/jquery.dataTables.js"></script>
+<script src="../../../libraries/datatable.tabletools/js/TableTools.js"></script>
+<script src="../../../libraries/datatable.bootstrap.adapter/dataTables.bootstrap.js"></script>
+<script src="../../../javascripts/custom/utils.js"></script>
+
+
+<script type="text/javascript">
+
+
+function loadTable()
+{
+	
+	$('#info_table').dataTable({
+	"sDom": "<'row-fluid'<'span6'T><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+	"oLanguage": {
+		"sUrl": "../../../libraries/datatable/1.9.4/js/datatable_zh_CN.js"
+	} ,	
+	"oTableTools": {    
+    "aButtons": [
+					{ "sExtends": "gotoURL",
+					"sButtonText":"增加",
+					  "sGoToURL": "purchasing_model_add.html?method=add",
+						"sButtonClass": "btn"
+					},
+					
+					{ "sExtends": "gotoURL",
+					"sButtonText":"删除",
+					  "sGoToURL": "",
+						"sButtonClass": "btn"
+					}              
+
+            ]
+        }
+	});
+	
+	
+}
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	loadTable();
+});
+</script>
+
+
+</body>
+</html>

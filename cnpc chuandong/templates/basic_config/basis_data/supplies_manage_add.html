@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><head>
+<meta charset="utf-8">
+<title>工作台 | 仓储条码管理信息系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../../libraries/bootstrap/2.3.1/css/bootstrap.css">
+<link rel="stylesheet" href="../../../libraries/bootstrap/2.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../../libraries/bootstrap/2.3.1/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="../../../libraries/bootstrap/2.3.1/css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="../../../stylesheets/css/dtree.css">
+<link rel="stylesheet" href="../../../stylesheets/css/jquery-ui-1.10.2.custom.css">
+<link rel="stylesheet" href="../../../stylesheets/css/jquery-ui.css">
+<link rel="stylesheet" href="../../../stylesheets/css/application-0.1.0.css">
+
+</head>
+<body>
+<div class="container-fluid">
+  <div id="header" class="row-fluid">
+    <h1 id="logo" class="span2"></h1>
+    <ul id="navbar" class="span7">
+         <li ><a href="../../warehouse/input/arrival-notice.html" list="list_0">仓库管理</a></li>
+         <li><a href="../../valueadded-services/spectrum-detection.html" list="list_1">增值业务</a></li>
+         <li class="active"><a href="material_manage.html" list="list_2">基础配置</a></li>
+         <li><a href="../../system-security/management-of-user.html" list="list_3">系统安全</a></li>
+    </ul>
+    <div id="profile" class="span3">
+      <i class="icon-user"></i>&nbsp;<a data-toggle="modal" data-target="#myModal" href="javascript:void(0);">系统管理员</a>&nbsp;|&nbsp;<a href="../../others/workbench.html">我的工作台</a>&nbsp;|&nbsp;<a href="../../others/the_system_message.html">系统消息</a>&nbsp;|&nbsp;<a href="../../../index.html">注销</a>
+    </div>
+  </div>  
+  <div id="content" class="row-fluid">    
+  <div class="span2">
+      <ul class="second_list" id="list_2" style="display: block; min-height: 719px;">
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-0">基础资料</a>
+         </h3>
+         <ul id="collapse-10-0" class="collapse in menu-item-opened">
+      <li>
+            <a href="material_manage.html">物料管理</a>
+      </li>
+      <li class="active">
+            <a href="supplies_manage.html">供应商管理</a>
+      </li>
+	  <li>
+            <a href="receiving_materials_manage.html">领料方管理</a>
+      </li>
+	  <li>
+            <a href="unit_manage.html">计量单位管理</a>
+      </li>
+	  <li >
+            <a href="purchasing_model.html">采购方式管理</a>
+      </li>
+         </ul>
+      </li>
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-1">系统配置</a>
+         </h3>
+         <ul id="collapse-10-1" class="collapse in menu-item-opened">
+  
+         </ul>
+      </li>
+   </ul>
+  </div>
+
+
+  <div id="workspace" class="span10">   
+  <h1><span id='title'></span>供应商信息</h1>
+	<form class="form-horizontal" id="objBean" name="objBean" action="market/org/createorg" method="POST" novalidate="novalidate">
+  <fieldset>
+    <div class="control-group" >
+      <label class="control-label" for="departmentId"><em class="required">*</em>供应商</label>
+      <div class="controls">
+        <input class="span6" type="text" id="supplier" name="supplier" maxlength="20" placeholder="例如:上海阀门厂有限公司">
+      </div>
+    </div>
+    <div class="control-group" >
+      <label class="control-label" for="departmentId">地址</label>
+      <div class="controls">
+        <input class="span6" type="text" id="address" name="address" maxlength="50" placeholder="例如:成都市高新区天府大道天府2街5号" >
+      </div>
+    </div>
+	<div class="control-group" >
+      <label class="control-label" for="departmentId">邮编</label>
+      <div class="controls">
+        <input class="span6" type="text" id="zip" name="zip" maxlength="6" placeholder="例如:610000" >
+      </div>
+    </div>
+	<div class="control-group" >
+      <label class="control-label" for="departmentId"><em class="required">*</em>国家</label>
+      <div class="controls">
+        <input class="span6" type="text" id="country" name="country" maxlength="16" placeholder="例如:中国" >
+      </div>
+    </div>
+		<div class="control-group" >
+      <label class="control-label" for="departmentId"><em class="required">*</em>地区</label>
+      <div class="controls">
+        <input class="span6" type="text" id="district" name="district" maxlength="16" placeholder="例如:四川省" >
+      </div>
+    </div>	
+	<div class="control-group" >
+      <label class="control-label" for="departmentId"><em class="required">*</em>电话</label>
+      <div class="controls">
+        <input class="span6" type="text" id="phone" name="phone" maxlength="16" placeholder="例如:13512345678或028-22341234" >
+      </div>
+    </div>
+	<div class="control-group" >
+      <label class="control-label" for="departmentId">传真</label>
+      <div class="controls">
+        <input class="span6" type="text" id="fax" name="fax" maxlength="50" placeholder="例如:028-28881234" >
+      </div>
+    </div>
+	<div class="control-group" >
+      <label class="control-label" for="departmentId">税务登记号</label>
+      <div class="controls">
+        <input class="span6" type="text" id="registerNo" name="registerNo" maxlength="30" placeholder="例如:510107400008888" >
+      </div>
+    </div>
+    <div class="control-group">
+	 <div class="controls">
+      <a class="btn btn-large" href="supplies_manage.html">确认</a>
+      <a class="btn btn-large" href="supplies_manage.html">取消</a>
+	 </div>  
+    </div>
+  </fieldset>
+</form> 
+ </div> 
+  </div>
+  </div>
+    
+    <p class="row-fluid" id="footer">
+    <a href="../../others/to_do.html">帮助中心</a>&nbsp;|&nbsp;
+    <a href="../../others/to_do.html">更新日记</a>&nbsp;|&nbsp;
+    <a href="../../others/to_do.html">意见反馈</a><br>
+当前版本：v1.0.0<br>  </p>
+
+
+<div class="modal" id="myModal" style="display:none;">
+   <div class="modal-header">
+      <button class="close" data-dismiss="modal" onclick="clearPass();">×</button>
+      <h3>修改个人密码</h3>
+   </div>
+   <div class="modal-body">
+      <form class="form-horizontal" id="resetPasswordForm" name="resetPasswordForm" onsubmit="return false;" novalidate="novalidate">
+	    <fieldset>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>旧密码</label>
+	        <div class="controls">
+           	  <input class="span6" type="password" id="oldPassword" name="oldPassword" maxlength="16">
+           	</div>
+           	<div class="controls">
+	          <p class="help-block">用户当前的登录密码，由6-16个字母、数字或下划线组成</p>
+	        </div>
+	      </div>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>新密码</label>
+	        <div class="controls">
+              <input class="span6" type="password" id="newPassword" name="newPassword" maxlength="16" "="">
+            </div>
+            <div class="controls">
+	          <p class="help-block">用户新的登录密码，由6-16个字母、数字或下划线组成</p>
+	        </div>
+	      </div>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>确认密码</label>
+	        <div class="controls">
+	          <input class="span6" type="password" id="affirmPassword" name="affirmPassword" maxlength="16">
+	        </div>
+	        <div class="controls">
+	          <p class="help-block">确认密码必须和新密码一致</p>
+	        </div>
+	      </div>
+	    </fieldset>
+	  </form>
+   </div>
+   <div class="modal-footer">
+      <a href="javascript:void(0)" onclick="submitResetPassword();" class="btn btn-large">确认</a>
+      <a data-dismiss="modal" class="btn btn-large" onclick="clearPass();">取消</a>
+   </div>
+</div>
+
+
+
+ 
+<style type="text/css"> .file { font: 10pt; color: black; } </style>
+<script language="javascript">
+var i=0;
+function addFile() {
+i++;
+ 
+currRow=conditionTable.insertRow();
+cellc=currRow.insertCell();
+cellcContext= '<input type="file" NAME="File+"+i>&nbsp;&nbsp;<button onclick="removeFile();">删除</button><br>';
+cellc.innerHTML=cellcContext;
+ 
+}
+function findTD(o){
+if (o.nodeName=="TR"||o.nodeName=="TABLE") return;
+if(o.nodeName=="TD")
+return (o);
+else
+return (o.parentElement);
+}
+function removeFile(){
+o = findTD(event.srcElement);
+conditionTable.deleteRow(o.parentElement.rowIndex*1);  
+}
+function uploadFile(){
+ 
+}
+  
+</script>
+
+
+
+<script src="../../../libraries/jquery/1.9.1/jquery-1.9.1.js"></script>
+<script src="../../../libraries/jquery/1.9.1/jquery-ui-1.10.2.custom.min.js"></script>
+<script src="../../../libraries/bootstrap/2.3.1/js/bootstrap.js"></script>  
+<script src="../../../libraries/jquery.validation/1.11.0/jquery.validate.min.js"></script> 
+<script src="../../../libraries/jquery.validation/1.11.0/additional-methods.min.js"></script>
+<script src="../../../libraries/jquery.validation/1.11.0/messages_zh.js"></script>
+<script src="../../../libraries/jquery.validation.bootstrap_adapter/0.1.0/jquery.validate.bootstrap_adapter-0.1.0.js"></script>
+<script src="../../../javascripts/ui/jquery-ui.js"></script>
+<script src="../../../javascripts/jquery.ui.datepicker-zh-CN.js"></script>
+<script src="../../../javascripts/custom/utils.js"></script>
+
+
+<script type="text/javascript">
+
+function initValidator(){
+	
+	jQuery.validator.addMethod("isZipCode", function(value, element) {       
+		var tel = /^[0-9]{6}$/;       
+		return this.optional(element) || (tel.test(value));       
+	}, "请正确填写您的邮政编码");  
+	jQuery.validator.addMethod("isPhone", function(value,element) {   
+		var length = value.length;   
+		var mobile = /^(((13[0-9]{1})|(15[0-9]{1}))+\d{8})$/;   
+		var tel = /^\d{3,4}-?\d{7,9}$/;   
+		return this.optional(element) || (tel.test(value) || mobile.test(value));
+	}, "请正确填写您的电话号码");
+	
+	// validate parameter 
+	$('#objBean').validate({
+      rules : {
+	   event : "blur",
+       supplier: 
+       {
+         required: true,
+         rangelength:[1,20]		 	 
+       },
+	   address:
+	   {         
+         rangelength:[2,50]			 
+       },
+       zip: 
+       {         
+         rangelength:[6,6],
+		 isZipCode: true
+       },
+	   country:
+	   {
+         required: true,
+         rangelength:[2,16]		 
+       },
+	   district:
+	   {
+         required: true,
+         rangelength:[1,16]		 
+       },
+	   phone:
+	   {
+		  required: true,
+		  rangelength:[5,16],
+		  isPhone:true
+	   },
+	   fax:
+	   {         
+         rangelength:[5,16]		 
+       },
+	   registerNo:
+	   {
+		 rangelength:[2,30]		
+	   },
+     },
+	 messages: {
+		supplier:"供应商名称必填,且不超过20字符",
+		address:"地址不超过50字符",
+		zip:"邮编格式不对,请按照样例输入",
+		country:"国家必填,且介于2~16个字符",
+		district:"地区必填,且不超过16字符",
+		phone:"电话必填,请按照样例输入",
+		fax:"传真不能超过16个字符",
+		registerNo:"税务登记号不得超过40字符"
+	},
+	
+	errorPlacement:function(error, element) { 
+		error.insertAfter(element); 		
+	}
+	
+	
+  });
+}
+
+function initialize(){
+  
+	initValidator();	
+	
+}
+</script> 
+
+<script type="text/javascript">
+$(document).ready(function(){
+	if ('function' === typeof(initialize)){
+		initialize();
+	}
+	
+
+});
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><head>
+<meta charset="utf-8">
+<title>工作台 | 仓储条码管理信息系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../libraries/bootstrap/2.3.1/css/bootstrap.css">
+<link rel="stylesheet" href="../../libraries/bootstrap/2.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../libraries/bootstrap/2.3.1/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="../../libraries/bootstrap/2.3.1/css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="../../stylesheets/css/dtree.css">
+<link rel="stylesheet" href="../../stylesheets/css/jquery-ui-1.10.2.custom.css">
+<link rel="stylesheet" href="../../stylesheets/css/jquery-ui.css">
+<link rel="stylesheet" href="../../stylesheets/css/application-0.1.0.css">
+
+</head>
+<body>
+<div class="container-fluid">
+  <div id="header" class="row-fluid">
+    <h1 id="logo" class="span2"></h1>
+    <ul id="navbar" class="span7">
+         <li><a href="../warehouse/input/arrival-notice.html" list="list_0">仓库管理</a></li>
+         <li><a href="../valueadded-services/spectrum-detection.html" list="list_1">增值业务</a></li>
+         <li><a href="../basic_config/basis_data/material_manage.html" list="list_2">基础配置</a></li>
+         <li><a href="../system-security/management-of-user.html" list="list_3">系统安全</a></li>
+    </ul>
+    <div id="profile" class="span3">
+      <i class="icon-user"></i>&nbsp;<a data-toggle="modal" data-target="#myModal" href="javascript:void(0);">系统管理员</a>&nbsp;|&nbsp;<a href="workbench.html">我的工作台</a>&nbsp;|&nbsp;<a href="the_system_message.html">系统消息</a>&nbsp;|&nbsp;<a href="../../index.html">注销</a>
+    </div>
+  </div>  
+  <div id="content" class="row-fluid">
+    
+ 
+ <div id="workspace" class="span10">
+    <h1 align="center">待完善...</h1>
+    <form class="form-horizontal" id="dForm" name="dForm" action="" method="POST" novalidate="novalidate"> 
+	<fieldset>
+     <p align="center">敬请期待</p>
+    </fieldset>
+   </form>	
+   </div>
+  </div>
+    
+ 
+<p class="row-fluid" id="footer">	 
+<a href="to_do.html" >帮助中心</a>&nbsp;|&nbsp;
+    <a href="to_do.html" >更新日记</a>&nbsp;|&nbsp;
+    <a href="to_do.html" >意见反馈</a><br>
+当前版本：v1.0.0<br>
+</p>
+
+<div class="modal" id="myModal" style="display:none;">
+   <div class="modal-header">
+      <button class="close" data-dismiss="modal" onclick="clearPass();">×</button>
+      <h3>修改个人密码</h3>
+   </div>
+   <div class="modal-body">
+      <form class="form-horizontal" id="resetPasswordForm" name="resetPasswordForm" onsubmit="return false;" novalidate="novalidate">
+	    <fieldset>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>旧密码</label>
+	        <div class="controls">
+           	  <input class="span5" type="password" id="oldPassword" name="oldPassword" maxlength="16">
+           	</div>
+           	<div class="controls">
+	          <p class="help-block">用户当前的登录密码，由6-16个字母、数字或下划线组成</p>
+	        </div>
+	      </div>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>新密码</label>
+	        <div class="controls">
+              <input class="span5" type="password" id="newPassword" name="newPassword" maxlength="16" "="">
+            </div>
+            <div class="controls">
+	          <p class="help-block">用户新的登录密码，由6-16个字母、数字或下划线组成</p>
+	        </div>
+	      </div>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>确认密码</label>
+	        <div class="controls">
+	          <input class="span5" type="password" id="affirmPassword" name="affirmPassword" maxlength="16">
+	        </div>
+	        <div class="controls">
+	          <p class="help-block">确认密码必须和新密码一致</p>
+	        </div>
+	      </div>
+	    </fieldset>
+	  </form>
+   </div>
+   <div class="modal-footer">
+      <a href="javascript:void(0)" onclick="submitResetPassword();" class="btn btn-large">确认</a>
+      <a data-dismiss="modal" class="btn btn-large" onclick="clearPass();">取消</a>
+   </div>
+</div>
+
+
+
+<div class="modal hide fade" id="product-modal">
+    <div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    	<h3>物料选择</h3>
+    </div>
+    <div class="modal-body">
+    	<iframe frameborder="0" id="product-frame" name="product-frame"></iframe>
+    </div>
+    <div class="modal-footer">
+    </div>
+</div>
+<div class="modal hide fade" id="location-modal">
+    <div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    	<h3>库位选择</h3>
+    </div>
+    <div class="modal-body">
+    	<iframe frameborder="0" id="location-frame" name="location-frame"></iframe>
+    </div>
+    <div class="modal-footer">
+    </div>
+</div>
+
+<script src="../../libraries/jquery/1.9.1/jquery-1.9.1.js"></script>
+<script src="../../libraries/jquery/1.9.1/jquery-ui-1.10.2.custom.min.js"></script>
+<script src="../../libraries/bootstrap/2.3.1/js/bootstrap.js"></script>  
+<script src="../../libraries/jquery.validation/1.11.0/jquery.validate.js"></script> 
+<script src="../../libraries/jquery.validation/1.11.0/additional-methods.js"></script>
+<script src="../../libraries/jquery.validation/1.11.0/messages_zh.js"></script>
+<script src="../../javascripts/ui/jquery-ui.js"></script>
+<script src="../../javascripts/jquery.ui.datepicker-zh-CN.js"></script>
+<script src="../../javascripts/custom/utils.js"></script>
+
+
+<script language="javascript" type="text/javascript">
+   $(document).ready(function(){
+        
+        
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><head>
+<meta charset="utf-8">
+<title>工作台 | 仓储条码管理信息系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="stylesheet" href="../../../libraries/bootstrap/2.3.1/css/bootstrap.css">
+<link rel="stylesheet" href="../../../libraries/bootstrap/2.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../../libraries/bootstrap/2.3.1/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="../../../libraries/bootstrap/2.3.1/css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="../../../stylesheets/css/dtree.css">
+<link rel="stylesheet" href="../../../stylesheets/css/jquery-ui-1.10.2.custom.css">
+<link rel="stylesheet" href="../../../stylesheets/css/jquery-ui.css">
+<link rel="stylesheet" href="../../../stylesheets/css/application-0.1.0.css">
+
+</head>
+<body>
+<div class="container-fluid">
+  <div id="header" class="row-fluid">
+    <h1 id="logo" class="span2"></h1>
+    <ul id="navbar" class="span7">
+         <li class="active"><a href="../input/arrival-notice.html" list="list_0">仓库管理</a></li>
+         <li><a href="../../valueadded-services/spectrum-detection.html" list="list_1">增值业务</a></li>
+         <li><a href="../../basic_config/basis_data/material_manage.html" list="list_2">基础配置</a></li>
+         <li><a href="../../system-security/management-of-user.html" list="list_3">系统安全</a></li>
+    </ul>
+    <div id="profile" class="span3">
+      <i class="icon-user"></i>&nbsp;<a data-toggle="modal" data-target="#myModal" href="javascript:void(0);">系统管理员</a>&nbsp;|&nbsp;<a href="../../others/workbench.html">我的工作台</a>&nbsp;|&nbsp;<a href="../../others/the_system_message.html">系统消息</a>&nbsp;|&nbsp;<a href="../../../index.html">注销</a>
+    </div>
+  </div>  
+  <div id="content" class="row-fluid">
+    
+  <div class="span2">
+      <ul class="second_list" id="list_2" style="display: block; min-height: 780px;">
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-0">入库业务</a>
+         </h3>
+         <ul id="collapse-10-0" class="collapse in menu-item-opened">
+      <li>
+            <a href="../input/arrival-notice.html">到货预告</a>
+      </li>
+      <li>
+            <a href="../input/warehouse-input.html">采购入库</a>
+      </li>
+	  <li>
+            <a href="../input/withdrawing-application.html">退料入库</a>
+      </li>
+      <li>
+            <a href="../input/mrr-report.html">MRR报告</a>
+      </li>
+         </ul>
+      </li>
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-1">出库业务</a>
+         </h3>
+         <ul id="collapse-10-1" class="collapse in menu-item-opened">
+      <li>
+            <a href="../output/an-application-form.html">领料申请</a>
+      </li>
+      <li>
+            <a href="../output/warehouse-output.html">领料出库</a>
+      </li>
+         </ul>
+      </li>
+	  <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-2">UOSD</a>
+         </h3>
+         <ul id="collapse-10-2" class="collapse in menu-item-opened">
+      <li>
+            <a href="../uosd/uosd-report.html">UOSD报告</a>
+      </li>
+         </ul>
+      </li>
+	  <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-3">库存盘点</a>
+         </h3>
+         <ul id="collapse-10-3" class="collapse in menu-item-opened">
+      <li>
+            <a href="../inventory-verification/take-stock.html">盘点任务</a>
+      </li>
+	  <li>
+            <a href="../inventory-verification/take-stock-report.html">盘点报告</a>
+      </li>
+         </ul>
+      </li>
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-4">库位管理</a>
+         </h3>
+         <ul id="collapse-10-4" class="collapse in menu-item-opened">
+	  <li>
+            <a href="../space-management-in-warehouse/storage-location-planning.html">库位规划</a>
+      </li>
+	  <li>
+            <a href="../space-management-in-warehouse/location-adjustment.html">物料移库</a>
+      </li>
+	  <li class="active">
+            <a href="../space-management-in-warehouse/storage-location-statistics.html" >库位统计</a>
+      </li>
+         </ul>
+      </li>
+	  <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-5">库存分析</a>
+         </h3>
+         <ul id="collapse-10-5" class="collapse in menu-item-opened">
+	 
+      <li>
+            <a href="../reserve-analysis/stock-statistics.html">实时库存统计</a>
+      </li>
+	  <li>
+            <a href="../reserve-analysis/income-issue-save.html">收发存汇总表</a>
+      </li>
+         </ul>
+      </li>
+   </ul>
+  </div>
+
+
+  <div id="workspace" class="span10">   
+   <h1>库位统计</h1>
+   <form class="vertical-inline-form" id="qForm" name="qForm" action="warehouse/location/locationquery/warehouse" method="GET" style="">
+	<fieldset>
+       <div class="control-group">
+          <label class="control-label" for="code1">库位编码</label>
+          <div class="controls">
+             <input type="text" id="locationIds" name="locationIds" class="span10" value="" placeholder="输入库位编码" >
+             <a class="btn location-query" selector="#locationIds" selectlocation="false" type="shelf" framesrc="basicdata/location/getlocationbyid?selector=%23locationIds&amp;selectLocation=false&amp;type=shelf" style="margin-left: -41px;">…</a>
+          </div>
+       </div>
+       <div class="control-group btn-panel">
+           <label>&nbsp;</label>
+           <div class="controls">
+              <a rightid="10010301" norighthandle="remove" class="btn" href="#">查询</a>
+           </div>
+       </div>
+	</fieldset>
+   </form>
+   <form class="vertical-inline-form" style="">
+   <div>    
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>库位类别</th>
+          <th>库位数量</th>          
+        </tr>
+        </thead>
+        <tbody>        
+            <tr>
+              <td style="font-size: 12px;">未分配库位</td>
+              <td style="font-size: 12px;">0</td>
+            </tr>
+            <tr>
+	          <td style="font-size: 12px;">空库位</td>
+	          <td style="font-size: 12px;">0</td>
+	        </tr>
+	        <tr>
+	          <td style="font-size: 12px;">半满库位</td>
+	          <td style="font-size: 12px;">0</td>
+	        </tr>
+	        <tr>
+	          <td style="font-size: 12px;">已满库位</td>
+	          <td style="font-size: 12px;">0</td>
+	        </tr>
+	        <tr>
+	          <td style="font-size: 12px;">总计</td>
+              <td style="font-size: 12px;">0</td>
+            </tr>
+      </tbody>
+    </table>   
+   </div>	
+<div class="tab-pane" id="chart">
+	<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"><div class="highcharts-container" id="highcharts-0" style="position: relative; overflow: hidden; width: 1086px; height: 400px; text-align: left; line-height: normal; z-index: 0; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif; font-size: 12px; cursor: auto;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1086" height="400"><defs><clipPath id="highcharts-1"><rect rx="0" ry="0" fill="none" x="0" y="0" width="9999" height="400" stroke-width="0.000001"></rect></clipPath><clipPath id="highcharts-2"><rect fill="none" x="0" y="0" width="1066" height="345"></rect></clipPath><linearGradient x1="0" y1="0" x2="0" y2="20" gradientUnits="userSpaceOnUse" id="highcharts-3"><stop offset="0.4" stop-color="#F7F7F7" stop-opacity="1"></stop><stop offset="0.6" stop-color="#E3E3E3" stop-opacity="1"></stop></linearGradient></defs><rect rx="5" ry="5" fill="#FFFFFF" x="0" y="0" width="1086" height="400" stroke-width="0.000001"></rect><g class="highcharts-series-group" zIndex="3"></g><path fill="none" d="M 494.32652673716115 16.72295476092481 C 499.32652673716115 16.72295476092481 501.01680304211936 24.542351541552904 503.34093296143686 35.29402211491652 L 505.66506288075436 46.04569268828014" stroke-width="1" stroke="#000000" visibility="visible" zIndex="3" transform="translate(10,40)"></path><path fill="none" d="M 375.0497730060887 127.70470239510611 C 380.0497730060887 127.70470239510611 387.72727459637133 129.95325066703802 398.2838392830099 133.04500454094443 L 408.8404039696485 136.13675841485085" stroke-width="1" stroke="#000000" visibility="visible" zIndex="3" transform="translate(10,40)"></path><path fill="none" d="M 418.4687073068792 288.2725638740626 C 423.4687073068792 288.2725638740626 428.9667486655928 282.46123517763914 436.52655553382385 274.47065822005675 L 444.08636240205493 266.48008126247436" stroke-width="1" stroke="#000000" visibility="visible" zIndex="3" transform="translate(10,40)"></path><path fill="none" d="M 692.0184027651881 213.47221295781225 C 687.0184027651881 213.47221295781225 679.2872829401119 211.41556854267503 668.6569931806323 208.5876824718613 L 658.0267034211527 205.7597964010476" stroke-width="1" stroke="#000000" visibility="visible" zIndex="3" transform="translate(10,40)"></path><text x="543" y="25" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:16px;color:#3E576F;fill:#3E576F;" text-anchor="middle" class="highcharts-title" zIndex="4"><tspan x="543">库位数量占比</tspan></text><g class="highcharts-shadow" zIndex="4" transform="translate(10,40)"><path fill="none" d="M 532.9736497792719 43.125002683416966 A 129.375 129.375 0 1 1 468.6933785339099 284.76107544744525 L 533 172.5 A 0 0 0 1 0 533 172.5 Z" stroke="black" stroke-width="5" stroke-linejoin="round" isShadow="true" stroke-opacity="0.049999999999999996" transform="translate(1, 1)"></path><path fill="none" d="M 532.9736497792719 43.125002683416966 A 129.375 129.375 0 1 1 468.6933785339099 284.76107544744525 L 533 172.5 A 0 0 0 1 0 533 172.5 Z" stroke="black" stroke-width="3" stroke-linejoin="round" isShadow="true" stroke-opacity="0.09999999999999999" transform="translate(1, 1)"></path><path fill="none" d="M 532.9736497792719 43.125002683416966 A 129.375 129.375 0 1 1 468.6933785339099 284.76107544744525 L 533 172.5 A 0 0 0 1 0 533 172.5 Z" stroke="black" stroke-width="1" stroke-linejoin="round" isShadow="true" stroke-opacity="0.15" transform="translate(1, 1)"></path></g><g class="highcharts-shadow" zIndex="4" transform="translate(10,40)"><path fill="none" d="M 468.6932662728666 284.76101114076766 A 129.375 129.375 0 0 1 424.47128365425567 242.92306691237593 L 533 172.5 A 0 0 0 0 0 533 172.5 Z" stroke="black" stroke-width="5" stroke-linejoin="round" isShadow="true" stroke-opacity="0.049999999999999996" transform="translate(1, 1)"></path><path fill="none" d="M 468.6932662728666 284.76101114076766 A 129.375 129.375 0 0 1 424.47128365425567 242.92306691237593 L 533 172.5 A 0 0 0 0 0 533 172.5 Z" stroke="black" stroke-width="3" stroke-linejoin="round" isShadow="true" stroke-opacity="0.09999999999999999" transform="translate(1, 1)"></path><path fill="none" d="M 468.6932662728666 284.76101114076766 A 129.375 129.375 0 0 1 424.47128365425567 242.92306691237593 L 533 172.5 A 0 0 0 0 0 533 172.5 Z" stroke="black" stroke-width="1" stroke-linejoin="round" isShadow="true" stroke-opacity="0.15" transform="translate(1, 1)"></path></g><g class="highcharts-shadow" zIndex="4" transform="translate(10,40)"><path fill="none" d="M 424.47121323124304 242.92295838362435 A 129.375 129.375 0 0 1 479.61003763341404 54.655176000409185 L 533 172.5 A 0 0 0 0 0 533 172.5 Z" stroke="black" stroke-width="5" stroke-linejoin="round" isShadow="true" stroke-opacity="0.049999999999999996" transform="translate(1, 1)"></path><path fill="none" d="M 424.47121323124304 242.92295838362435 A 129.375 129.375 0 0 1 479.61003763341404 54.655176000409185 L 533 172.5 A 0 0 0 0 0 533 172.5 Z" stroke="black" stroke-width="3" stroke-linejoin="round" isShadow="true" stroke-opacity="0.09999999999999999" transform="translate(1, 1)"></path><path fill="none" d="M 424.47121323124304 242.92295838362435 A 129.375 129.375 0 0 1 479.61003763341404 54.655176000409185 L 533 172.5 A 0 0 0 0 0 533 172.5 Z" stroke="black" stroke-width="1" stroke-linejoin="round" isShadow="true" stroke-opacity="0.15" transform="translate(1, 1)"></path></g><g class="highcharts-shadow" zIndex="4" transform="translate(10,40)"><path fill="none" d="M 479.6101554782648 54.65512261050573 A 129.375 129.375 0 0 1 532.9495462890096 43.12500983797895 L 533 172.5 A 0 0 0 0 0 533 172.5 Z" stroke="black" stroke-width="5" stroke-linejoin="round" isShadow="true" stroke-opacity="0.049999999999999996" transform="translate(1, 1)"></path><path fill="none" d="M 479.6101554782648 54.65512261050573 A 129.375 129.375 0 0 1 532.9495462890096 43.12500983797895 L 533 172.5 A 0 0 0 0 0 533 172.5 Z" stroke="black" stroke-width="3" stroke-linejoin="round" isShadow="true" stroke-opacity="0.09999999999999999" transform="translate(1, 1)"></path><path fill="none" d="M 479.6101554782648 54.65512261050573 A 129.375 129.375 0 0 1 532.9495462890096 43.12500983797895 L 533 172.5 A 0 0 0 0 0 533 172.5 Z" stroke="black" stroke-width="1" stroke-linejoin="round" isShadow="true" stroke-opacity="0.15" transform="translate(1, 1)"></path></g><g class="highcharts-point" zIndex="5" transform="translate(10,40)"><path fill="#ddd" d="M 532.9736497792719 43.125002683416966 A 129.375 129.375 0 1 1 468.6933785339099 284.76107544744525 L 533 172.5 A 0 0 0 1 0 533 172.5 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"></path><path fill="rgb(192,192,192)" d="M 532.9736497792719 43.625002683416966 A 129.375 129.375 0 1 1 468.6933785339099 285.26107544744525 L 533 173 A 0 0 0 1 0 533 173 Z" isTracker="1367064694206" fill-opacity="0.000001" visibility="visible" style="cursor:pointer;"></path></g><g class="highcharts-point" zIndex="5" transform="translate(10,40)"><path fill="#f0f0f0" d="M 468.6932662728666 284.76101114076766 A 129.375 129.375 0 0 1 424.47128365425567 242.92306691237593 L 533 172.5 A 0 0 0 0 0 533 172.5 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"></path><path fill="rgb(192,192,192)" d="M 468.6932662728666 285.26101114076766 A 129.375 129.375 0 0 1 424.47128365425567 243.42306691237593 L 533 173 A 0 0 0 0 0 533 173 Z" isTracker="1367064694206" fill-opacity="0.000001" visibility="visible" style="cursor:pointer;"></path></g><g class="highcharts-point" zIndex="5" transform="translate(10,40)"><path fill="rgb(127,229,255)" d="M 424.47121323124304 242.92295838362435 A 129.375 129.375 0 0 1 479.61003763341404 54.655176000409185 L 533 172.5 A 0 0 0 0 0 533 172.5 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" fill-opacity="1"></path><path fill="rgb(192,192,192)" d="M 424.47121323124304 243.42295838362435 A 129.375 129.375 0 0 1 479.61003763341404 55.155176000409185 L 533 173 A 0 0 0 0 0 533 173 Z" isTracker="1367064694206" fill-opacity="0.000001" visibility="visible" style="cursor:pointer;"></path></g><g class="highcharts-point" zIndex="5" transform="translate(10,40)"><path fill="#B94A48" d="M 479.6101554782648 54.65512261050573 A 129.375 129.375 0 0 1 532.9495462890096 43.12500983797895 L 533 172.5 A 0 0 0 0 0 533 172.5 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"></path><path fill="rgb(192,192,192)" d="M 479.6101554782648 55.15512261050573 A 129.375 129.375 0 0 1 532.9495462890096 43.62500983797895 L 533 173 A 0 0 0 0 0 533 173 Z" isTracker="1367064694206" fill-opacity="0.000001" visibility="visible" style="cursor:pointer;"></path></g><g class="highcharts-data-labels" visibility="visible" zIndex="6" transform="translate(10,40)"><g zIndex="1" style="" transform="translate(697,203.47221295781225)" visibility="visible"><rect rx="0" ry="0" fill="none" x="0" y="0" width="109" height="21" stroke-width="0.000001"></rect><text x="3" y="15" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#000000;line-height:14px;fill:#000000;" zIndex="1"><tspan style="font-weight:bold" x="3">未分配库位</tspan><tspan dx="3">: 100%</tspan></text></g><g zIndex="1" style="" transform="translate(338,278.2725638740626)" visibility="visible"><rect rx="0" ry="0" fill="none" x="0" y="0" width="78" height="21" stroke-width="0.000001"></rect><text x="3" y="15" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#000000;line-height:14px;fill:#000000;" zIndex="1"><tspan style="font-weight:bold" x="3">空库位</tspan><tspan dx="3">: 0 %</tspan></text></g><g zIndex="1" style="" transform="translate(276,117.70470239510611)" visibility="visible"><rect rx="0" ry="0" fill="none" x="0" y="0" width="97" height="21" stroke-width="0.000001"></rect><text x="3" y="15" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#000000;line-height:14px;fill:#000000;" zIndex="1"><tspan style="font-weight:bold" x="3">半满库位</tspan><tspan dx="3">:0 %</tspan></text></g><g zIndex="1" style="" transform="translate(402,6.722954760924811)" visibility="visible"><rect rx="0" ry="0" fill="none" x="0" y="0" width="90" height="21" stroke-width="0.000001"></rect><text x="3" y="15" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#000000;line-height:14px;fill:#000000;" zIndex="1"><tspan style="font-weight:bold" x="3">已满库位</tspan><tspan dx="3">:0 %</tspan></text></g></g><g class="highcharts-legend" zIndex="7"><rect rx="5" ry="5" fill="none" x="0.5" y="0.5" width="7" height="7" stroke-width="1" stroke="#909090" visibility="hidden"></rect></g><g class="highcharts-tooltip" zIndex="8" style="padding:0;white-space:nowrap;" visibility="visible" transform="translate(395,163.984619140625)"><rect rx="5" ry="5" fill="none" x="0" y="0" width="50" height="38" stroke-width="5" fill-opacity="0.85" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" transform="translate(1, 1)"></rect><rect rx="5" ry="5" fill="none" x="0" y="0" width="50" height="38" stroke-width="3" fill-opacity="0.85" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" transform="translate(1, 1)"></rect><rect rx="5" ry="5" fill="none" x="0" y="0" width="50" height="38" stroke-width="1" fill-opacity="0.85" isShadow="true" stroke="black" stroke-opacity="0.15" transform="translate(1, 1)"></rect><rect rx="5" ry="5" fill="rgb(255,255,255)" x="0" y="0" width="50" height="38" stroke-width="2" fill-opacity="0.85" stroke="#66CCFF" anchorX="61.5240995707897" anchorY="22.984619140625"></rect><text x="5" y="18" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#333333;fill:#333333;" zIndex="1"><tspan style="font-size: 10px" x="5">半满库位</tspan><tspan dy="14" x="5">0个</tspan></text></g><g class="highcharts-tracker" zIndex="9"></g><path fill="#B5C9DF" d="M 5.5 12.5 L 17.5 12.5 17.5 9.5 5.5 9.5 Z M 7.5 9.5 L 7.5 4.5 15.5 4.5 15.5 9.5 Z M 7.5 12.5 L 5.5 16.5 17.5 16.5 15.5 12.5 Z" transform="translate(1026,10)" stroke="#A0A0A0" stroke-width="1" zIndex="20"></path><rect rx="0" ry="0" fill="rgb(255,255,255)" x="1026" y="10" width="24" height="20" stroke-width="0.000001" id="printButton" fill-opacity="0.001" title="打印" zIndex="21" style="cursor:pointer;"><title>打印</title></rect></svg></div></div>
+	</div>
+
+</form>
+ </div> 
+  </div>
+  </div>
+    
+    <p class="row-fluid" id="footer">
+    <a href="../../others/to_do.html">帮助中心</a>&nbsp;|&nbsp;
+    <a href="../../others/to_do.html">更新日记</a>&nbsp;|&nbsp;
+    <a href="../../others/to_do.html">意见反馈</a><br>
+当前版本：v1.0.0<br>  </p>
+
+
+<div class="modal" id="myModal" style="display:none;">
+   <div class="modal-header">
+      <button class="close" data-dismiss="modal" onclick="clearPass();">×</button>
+      <h3>修改个人密码</h3>
+   </div>
+   <div class="modal-body">
+      <form class="form-horizontal" id="resetPasswordForm" name="resetPasswordForm" onsubmit="return false;" novalidate="novalidate">
+	    <fieldset>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>旧密码</label>
+	        <div class="controls">
+           	  <input class="span6" type="password" id="oldPassword" name="oldPassword" maxlength="16">
+           	</div>
+           	<div class="controls">
+	          <p class="help-block">用户当前的登录密码，由6-16个字母、数字或下划线组成</p>
+	        </div>
+	      </div>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>新密码</label>
+	        <div class="controls">
+              <input class="span6" type="password" id="newPassword" name="newPassword" maxlength="16" "="">
+            </div>
+            <div class="controls">
+	          <p class="help-block">用户新的登录密码，由6-16个字母、数字或下划线组成</p>
+	        </div>
+	      </div>
+	      <div class="control-group">
+	        <label class="control-label"><em class="required">*</em>确认密码</label>
+	        <div class="controls">
+	          <input class="span6" type="password" id="affirmPassword" name="affirmPassword" maxlength="16">
+	        </div>
+	        <div class="controls">
+	          <p class="help-block">确认密码必须和新密码一致</p>
+	        </div>
+	      </div>
+	    </fieldset>
+	  </form>
+   </div>
+   <div class="modal-footer">
+      <a href="javascript:void(0)" onclick="submitResetPassword();" class="btn btn-large">确认</a>
+      <a data-dismiss="modal" class="btn btn-large" onclick="clearPass();">取消</a>
+   </div>
+</div>
+
+
+
+ 
+<script src="../../../libraries/jquery/1.9.1/jquery-1.9.1.js"></script>
+<script src="../../../libraries/jquery/1.9.1/jquery-ui-1.10.2.custom.min.js"></script>
+<script src="../../../libraries/bootstrap/2.3.1/js/bootstrap.js"></script>  
+<script src="../../../libraries/jquery.validation/1.11.0/jquery.validate.js"></script> 
+<script src="../../../libraries/jquery.validation/1.11.0/additional-methods.js"></script>
+<script src="../../../libraries/jquery.validation/1.11.0/messages_zh.js"></script>
+<script src="../../../javascripts/ui/jquery-ui.js"></script>
+<script src="../../../javascripts/jquery.ui.datepicker-zh-CN.js"></script>
+<script src="../../../javascripts/custom/utils.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#start_date").datepicker();
+	$("#end_date").datepicker();
+
+});
+</script>
+
+</body>
+</html>

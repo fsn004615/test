@@ -1,0 +1,37 @@
+<div class="modal-header">
+      <button class="close" data-dismiss="modal" onclick="clearPass();">×</button>
+      <h3>请选择物料</h3>
+</div>
+<div class="modal-body">
+      <div class="items">
+      <table class="table table-striped table-bordered dataTable" id="material_table">
+        <thead>
+          <tr>
+            <th><input id="selectAll" name="selectAll" type="checkbox" onclick="check_all(this,'id')"></th>
+            <th>物资编码</th>
+			<th>物资名称</th>
+	        <th>规格</th>
+	        <th>计量单位</th> 
+          </tr>
+        </thead>
+        <tbody>            
+        </tbody>
+      </table>    
+    </div>  
+</div>
+<div class="modal-footer">
+   <a href="javascript:void(0)" onclick="" class="btn btn-large">确认</a>
+   <a data-dismiss="modal" class="btn btn-large" onclick="">取消</a>
+</div>
+
+<script type="text/javascript">
+
+
+	$('#material_table').dataTable({
+	"sDom": "<'row-fluid'<'span6'T><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+	"oLanguage": {
+		"sUrl": "libraries/datatable/1.9.4/js/datatable_zh_CN.js"
+	} )	
+	}
+
+</script>

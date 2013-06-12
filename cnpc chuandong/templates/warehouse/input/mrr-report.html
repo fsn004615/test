@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><head>
+<meta charset="utf-8">
+<title>工作台 | 仓储条码管理信息系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="../../..">
+
+<link rel="stylesheet" href="libraries/bootstrap/2.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="libraries/bootstrap/2.3.1/css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="libraries/datatable.bootstrap.adapter/dataTables.bootstrap.css">
+<link rel="stylesheet" href="stylesheets/css/dtree.css">
+<link rel="stylesheet" href="stylesheets/css/jquery-ui-1.10.2.custom.css">
+<link rel="stylesheet" href="stylesheets/css/jquery-ui.css">
+<link rel="stylesheet" href="stylesheets/css/application-0.1.0.css">
+</head>
+<body>
+<div class="container-fluid">
+  <div id="header" class="row-fluid">    
+    <h1 id="logo" class="span2"></h1>
+	<ul id="navbar" class="span7">
+	<li class="active"><a href="templates/warehouse/input/arrival-notice.html" list="list_0">仓库管理</a></li>
+	<li><a href="templates/valueadded-services/spectrum-detection.html" list="list_1">增值业务</a></li>
+	<li><a href="templates/basic_config/basis_data/material_manage.html" list="list_2">基础配置</a></li>
+	<li><a href="templates/system-security/management-of-user.html" list="list_3">系统安全</a></li>
+	</ul>
+	<div id="profile" class="span3">
+		<i class="icon-user"></i>&nbsp;<a data-toggle="modal" data-target="#myModal" href="javascript:void(0);">系统管理员</a>&nbsp;|&nbsp;<a href="templates/others/workbench.html">我的工作台</a>&nbsp;|&nbsp;<a href="templates/others/the_system_message.html">系统消息</a>&nbsp;|&nbsp;<a href="index.html">注销</a>
+	</div>
+  </div>  
+  <div id="content" class="row-fluid">
+    
+  <div class="span2">
+      <ul class="second_list" id="list_2" style="display: block; min-height: 719px;">
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-0">入库业务</a>
+         </h3>
+         <ul id="collapse-10-0" class="collapse in menu-item-opened">
+      <li>
+            <a href="templates/warehouse/input/arrival-notice.html">到货预告</a>
+      </li>
+      <li>
+            <a href="templates/warehouse/input/warehouse-input.html">采购入库</a>
+      </li>
+	  <li>
+            <a href="templates/warehouse/input/withdrawing-application.html">退料入库</a>
+      </li>
+      <li class="active">
+            <a href="templates/warehouse/input/mrr-report.html">MRR报告</a>
+      </li>
+         </ul>
+      </li>
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-1">出库业务</a>
+         </h3>
+         <ul id="collapse-10-1" class="collapse in menu-item-opened">
+      <li>
+            <a href="templates/warehouse/output/an-application-form.html">领料申请</a>
+      </li>
+      <li>
+            <a href="templates/warehouse/output/warehouse-output.html">领料出库</a>
+      </li>
+         </ul>
+      </li>
+	  <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-2">UOSD</a>
+         </h3>
+         <ul id="collapse-10-2" class="collapse in menu-item-opened">
+      <li>
+            <a href="templates/warehouse/uosd/uosd-report.html">UOSD报告</a>
+      </li>
+         </ul>
+      </li>
+	  <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-3">库存盘点</a>
+         </h3>
+         <ul id="collapse-10-3" class="collapse in menu-item-opened">
+      <li>
+            <a href="templates/warehouse/inventory-verification/take-stock.html">盘点任务</a>
+      </li>
+	  <li>
+            <a href="templates/warehouse/inventory-verification/take-stock-report.html">盘点报告</a>
+      </li>
+         </ul>
+      </li>
+      <li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-4">库位管理</a>
+         </h3>
+         <ul id="collapse-10-4" class="collapse in menu-item-opened">
+	  <li>
+            <a href="templates/warehouse/space-management-in-warehouse/storage-location-planning.html">库位规划</a>
+      </li>
+	  <li>
+            <a href="templates/warehouse/space-management-in-warehouse/location-adjustment.html">物料移库</a>
+      </li>
+	  <li>
+            <a href="templates/warehouse/space-management-in-warehouse/storage-location-statistics.html">库位统计</a>
+      </li>
+         </ul>
+      </li>
+	  <li>
+		<li>
+         <h3>
+            <a data-toggle="collapse" data-target="#collapse-10-5">库存分析</a>
+         </h3>
+         <ul id="collapse-10-5" class="collapse in menu-item-opened">
+	
+		<li>
+            <a href="templates/warehouse/reserve-analysis/stock-statistics.html">实时库存统计</a>
+      </li>
+	  <li>
+            <a href="templates/warehouse/reserve-analysis/income-issue-save.html">收发存汇总表</a>
+      </li>
+         </ul>
+      </li>
+   </ul>
+  </div>
+
+
+  <div id="workspace" class="span10">   
+ <h1>MRR报告</h1>
+    <form class="vertical-inline-form" id="qForm" name="qForm" action="market/sale/listoutinvoice" method="GET">
+      <input type="hidden" name="objId" id="objId"/>
+      <fieldset>
+        <div class="control-group">
+          <label class="control-label" for="departmentId">编制人</label>
+          <div class="controls">
+            <input placeholder="" id="productId" name="productId" 
+              class="span10 ui-autocomplete-input" type="text" value="" 
+              autocomplete="off" role="textbox" aria-autocomplete="list"
+              aria-haspopup="true" style="height: 28px; ">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">编制日期</label>    
+	        <div class="controls success">
+	            	<div class="row-fluid">
+   	                    <input type="text" class="span5 datepicker " placeholder="开始日期" id="start_date" name="start_date" value="2013-04-01">
+   	                <span class="right">&nbsp;~&nbsp;</span>
+   	                    <input type="text" class="span5 datepicker " placeholder="结束日期" id="end_date" name="end_date" value="2013-05-01">
+   	                </div>
+   	            </div>
+	      </div> 
+		        
+        <div class="control-group btn-panel">
+          <div class="controls">
+            <label class="control-label">&nbsp;</label>
+            <div class="controls">
+              <a rightid="10010301" norighthandle="remove" class="btn" >查询</a>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+    <div class="toolbar">
+  <a rightId="10020101" noRightHandle="remove" class="btn">打印</a>
+    <a rightId="10020106" noRightHandle="remove" class="btn" onclick="exportresult();">删除</a>
+<div class="pagination pagination-right">
+   <form method="get" action="market/org/listorg/query" name="pageForm">
+      <ul>
+         <li class="disabled"><a>&lt;</a></li>
+         <li class="active"><a>1</a></li>
+         <li><a class="disabled">&gt;</a></li>
+         <input type="hidden" name="pageNo" value="1"/>
+       </ul> 
+   </form>
+  <script language="javascript">
+    function turnOverPage(no){
+      var qForm= $("form[name='pageForm']");
+      if(no>2){no=2;}
+      if(no<1){no=1;}
+      var submit = 0;
+      qForm.each(function(){        
+        $(this).find("input[name='pageNo']").val(no);
+        $(this).attr("action", "market/org/listorg/query");
+        if (submit == 0)
+        {
+          $(this).submit();
+          submit = 1;
+        }
+      })
+    }
+    </script>
+  </div> 
+</div>
+    <div class="items">
+      <table class="table table-striped table-bordered dataTable" id="info_table_warehouse">
+        <thead>
+          <tr>
+            <th><input id="selectAll" name="selectAll" type="checkbox" onclick="check_all(this,'id')"></th>
+			<th>单据编号</th>
+            <th>编制人</th>
+            <th>接收编号</th>
+            <th>项目编号</th>
+            <th>采购合同编号</th>
+            <th>供应商</th>
+            <th>接受日期</th>
+			<th>备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center;"><input id="selectAll" name="selectAll" type="checkbox" ></td>
+			<td>MR00000001</td>
+            <td>刘卅</td>
+            <td>102400</td>
+			<td>456212</td>
+            <td>CDB-SHA-932</td>
+			<td>上海华力</td>
+			<td>2012-03-02</td>
+			<td>无</td>            
+          </tr>                        
+          <tr>
+            <td style="text-align: center;"><input id="selectAll" name="selectAll" type="checkbox" ></td>
+			<td>MR00000011</td>
+            <td>刘卅</td>
+            <td>102400</td>
+			<td>432212</td>
+            <td>CDB-SHA-311</td>
+			<td>上海华力</td>
+			<td>2012-05-09</td>
+			<td>无</td>            
+          </tr>                        
+        </tbody>
+      </table>    
+    </div>  
+ </div>
+  </div>
+  </div>
+    
+    <p class="row-fluid" id="footer">
+    </p>
+
+
+<div class="modal" id="myModal" style="display:none;">
+   
+</div>
+ 
+<script src="libraries/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script src="libraries/jquery/1.9.1/jquery-ui-1.10.2.custom.min.js"></script>
+<script src="libraries/bootstrap/2.3.1/js/bootstrap.min.js"></script>  
+<script src="libraries/jquery.validation/1.11.0/jquery.validate.js"></script> 
+<script src="libraries/jquery.validation/1.11.0/additional-methods.js"></script>
+<script src="libraries/jquery.validation.bootstrap_adapter/0.1.0/jquery.validate.bootstrap_adapter-0.1.0.js"></script>
+<script src="libraries/jquery.validation/1.11.0/messages_zh.js"></script>
+<script src="javascripts/ui/jquery-ui.js"></script>
+<script src="javascripts/jquery.ui.datepicker-zh-CN.js"></script>
+<script src="libraries/datatable/1.9.4/js/jquery.dataTables.js"></script>
+<script src="libraries/datatable.tabletools/js/TableTools.js"></script>
+<script src="libraries/datatable.editor/1.2.3/js/dataTables.editor.js"></script>
+<script src="libraries/datatable.bootstrap.adapter/dataTables.bootstrap.js"></script>
+<script src="javascripts/custom/utils.js"></script>
+
+<script type="text/javascript">
+	
+function loadComponent()
+{
+	$("#footer").load("templates/component/bottom.html");
+	$("#header").load("templates/component/head.html");
+	$("#myModal").load("templates/component/system_admin.html");
+	
+	
+}
+</script>
+
+<script type="text/javascript">
+function loadTable()
+{
+	var editor = new $.fn.dataTable.Editor({
+	
+	"domTable":"#info_table_warehouse",
+	"fields": [ {
+                "label": "谢谢:",
+                "name": "browser"
+            }, {
+                "label": "桌子:",
+                "name": "engine"
+            }, {
+                "label": "Platform:",
+                "name": "platform"
+            }, {
+                "label": "Version:",
+                "name": "version"
+            }, {
+                "label": "CSS grade:",
+                "name": "grade"
+            }
+        ]
+	});
+	
+	$('#info_table_warehouse').dataTable({
+	"sDom": "<'row-fluid'<'span6'T><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+	"oLanguage": {
+		"sUrl": "libraries/datatable/1.9.4/js/datatable_zh_CN.js"
+	} ,
+	"oTableTools": {
+    "sRowSelect": "multi",
+    "aButtons": [
+			{ "sExtends": "editor_remove", "editor": editor ,
+				"sButtonText":"删除",
+				"sButtonClass": "btn"
+			} ,                
+			{ "sExtends": "gotoURL",
+			"sButtonText":"生成MRR报告",
+			"sGoToURL": "templates/warehouse/input/mrr-report.html",
+			"sButtonClass": "btn"
+			},                
+
+            ]
+        }
+	});
+	
+	
+}
+
+</script> 
+<script type="text/javascript" id="init-code">
+
+$(document).ready(function(){	
+	
+	loadTable();
+	loadComponent();
+	$("#start_date").datepicker();
+	$("#end_date").datepicker();
+
+});
+</script>
+
+</body>
+</html>
